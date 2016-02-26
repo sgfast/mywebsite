@@ -3,17 +3,34 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
 	<title>和社区</title>
-	<link rel='stylesheet' type='text/css' href='skin/v1.css'>
+	<meta name='apple-mobile-web-app-capable' content='yes'>
+	<meta name='apple-mobile-web-app-status-bar-style' content='black'>
+	<meta name='format-detection' content='telephone=no'>
+	<meta name='format-detection' content='email=no'>
+	<script type='text/javascript' src='http://cache.hesq.com.cn/fresh/core/script/jquery.js'></script>
+	<script type='text/javascript' src='http://cache.hesq.com.cn/fresh/core/script/core2.js'></script>
+	<link rel='stylesheet' type='text/css' href='skin/core.css' />
+	<link rel='stylesheet' type='text/css' href='skin/v1.css' />
 	<script type="text/javascript" src='http://cdn.bootcss.com/angular.js/1.5.0/angular.js'></script>
 	<script type="text/javascript" src='http://cdn.bootcss.com/angular-ui-router/0.2.18/angular-ui-router.js'></script>
 </head>
 <body>
-
-
+<header>
+	<a id='area' href='javascript:history.go(-1)'><span>&#xe61e;</span></a>
+	<i><input type='text' id='key' placeholder='请输入搜索关键词' /></i>
+	<a id='message' href='../user/message.php'>&#xe624;<em class='dot_message'>11</em></a>
+</header>
+<footer style='z-index:10000'>
+	<a ui-sref='tmp/index'><i>&#xe62a;</i>首页</a>
+	<a ui-sref='product/category'><i>&#xe62b;</i>分类</a>
+	<a ui-sref='user/index'><i>&#xe616;</i>个人中心</a>
+	<a ui-sref='order/cart'><i>&#xe62f;</i>购物车</a>
+</footer>
 <div ui-view></div>
 <script type="text/javascript" src='app/router.js'></script>
 <script type="text/javascript" src='app/bootstrap.js'></script>
+
 </body>
 </html>

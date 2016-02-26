@@ -1,0 +1,234 @@
+@CHARSET "UTF-8";
+
+.cart_package .img{position:relative;}
+	.cart_package .img i{position:absolute; left:3px; padding:1px 4px 0 4px; color:#fff; font-size:0.6rem;}
+	
+i.t0{top:3px;}
+i.t1{top:19px;}
+i.t2{top:35px;}
+i.t3{top:51px;}
+i.t4{top:66px;}
+i.t5{top:82px;}
+	
+i.sale{background:#f8931f;}			/* 促销 */
+i.recom{background:#2ba6e1;}		/* 推荐 */
+i.limit{background:#93268f;}		/* 限购 */
+i.empty{background:#666}			/* 售罄 */
+i.yuan{background:#e95613;}			/* N元区(当前叫特价) */
+i.rush{background:#e50112;}			/* 限时抢 */
+i.present{background:#00887a;}		/* 买赠 */
+i.prefer{background:#214b95;}		/* 买优 */
+i.new{background:#8ec220;}			/* 新品 */
+	
+
+/*------------------------------------------------------------------------------------------*/
+/* 文本框样式 */
+/*------------------------------------------------------------------------------------------*/
+
+input[type='text']{color:#333; vertical-align:middle; padding:2%; background:#fcfcfc; border:1px solid #ddd; -moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;}
+textarea{border:solid 1px #ddd; padding:3%; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;}
+
+/*------------------------------------------------------------------------------------------*/
+/* 按钮样式 */
+/*------------------------------------------------------------------------------------------*/
+
+input[type='button']{margin:4px; color:#fff; padding:7px 11px; font-size:0.8rem; background:#a00; border:solid 1px #900; -moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;}
+input[type='submit']{margin:4px; color:#fff; padding:7px 11px; font-size:0.8rem; background:#36d332; border:none; -moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;}
+a.take{padding:2% 3%; margin:0 1%; border:1px #ccc solid; background:#999}
+
+
+/*------------------------------------------------------------------------------------------*/
+/* 头部 */
+/*------------------------------------------------------------------------------------------*/
+
+header{width:100%; padding:0 1% 0 0; height:44px; line-height:44px; background:#ff3c00; text-align:center; position:fixed; top:0; z-index:10; border-bottom:solid 1px #c82d00;}
+	header a{display:block; float:left; color:#fff; font-family:iconfont; font-size:1.6rem; padding-top:2px;  position:relative;}
+	header a#area{font-size:1.0rem;  width:22%;}
+		header a#area span{font-size:1.4rem; padding-left:5px;}
+	header a#message{width:14%;}
+	header i{display:block; float:left; width:63%; }
+		header input{width:90%; height:16px; margin:0 auto; border:1px solid #881e1e; -webkit-box-shadow:0 0 20px #951a1b; -moz-box-shadow:0 0 20px #951a1b; box-shadow:0 0 20px #951a1b;}
+
+/*------------------------------------------------------------------------------------------*/
+/* 底部 */
+/*------------------------------------------------------------------------------------------*/
+
+footer{width:100%; height:55px; line-height:55px; background:#f9f9f9; border-top:solid 2px #c9c9c9; text-align:center; position:fixed; bottom:0; z-index:20;}
+
+	/* ------------------------------------------------------------------------------------- */
+	
+	/* 全站通用底部导航 */
+	footer a{float:left; width:24%; padding:5px 0; margin:10px 0.5% 0; display:block; background-color:#dcdcdc; text-align:center; line-height:21px; font-size:0.8rem}
+		footer a i{font-family:iconfont; font-size:1.3rem; vertical-align: text-bottom;}
+		footer a.on, footer a.on i{color:#b20}
+		
+	/* 商品详情底部  */
+	
+
+	/* 其它三种左侧文本(左) */
+	footer #left{float:left; padding-left:2.5%; color:#333;}
+		footer #left b{color:#a00;  margin:0 5px;}
+		footer #left a{width:100%; position:relative;}
+		
+	/* 放在左侧的计数器(左) */
+	footer #counter{float:left; padding-left:1%; color:#333;}
+		footer #counter input[type='text']{width:28px; height:22px; text-align:center; border:solid 1px #a00;  font-family:iconfont;}
+
+	/* 其它三种右侧按钮(右) */
+	footer #right{float:right; margin-right:1%;}
+		footer #right a{margin:4px; width:auto; display:inline; overflow:hidden; font-family:iconfont; color:#fff; float:none; padding:5px 11px 4px; font-size:0.8rem; background:#a00; line-height:inherit; border:solid 1px #900; -moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;}
+		footer #right input[type='text']{width:24px; margin:0 2px; height:22px; padding:0 5px; text-align:center; border:solid 1px #a00;}
+
+
+
+/*------------------------------------------------------------------------------------------*/
+/* 内容盒子 */
+/*------------------------------------------------------------------------------------------*/
+
+#box{padding:44px 0 65px 0; min-width: 320px; max-width:640px; margin:0 auto;}
+
+
+/*------------------------------------------------------------------------------------------*/
+/* 当前 */
+/*------------------------------------------------------------------------------------------*/
+
+#cur{padding:2px 3% 0 3%; line-height:40px; border-bottom:1px #e3e3e3 solid; background:#fff;}
+	#cur i{float:left; font-family:iconfont; padding-right:7px; font-size:1.3rem; color:#e60}
+	#cur a{float:right; color:#797979;}
+
+
+/*------------------------------------------------------------------------------------------*/
+/* 提交订单 form 样式 */
+/*------------------------------------------------------------------------------------------*/
+
+#form{background:#fcfcfc; border-bottom:solid 1px #ddd; border-top:solid 1px #ddd;  margin:2% auto;}
+
+	#form li{border-bottom:1px #ddd solid; padding:4% 6%;}
+	    #form li input{border:1px solid #e3e3e3; padding:3%; width:60%; margin-left:10px;}
+
+
+/*------------------------------------------------------------------------------------------*/
+/* 添加新地址 */
+/*------------------------------------------------------------------------------------------*/
+
+#add{background:#fff; margin:2% auto; border-top:1px #ddd solid;}
+
+	    #add li{border-bottom:1px #ddd solid; padding:4% 6%;}
+	    #add li input{border:1px solid #e3e3e3; padding:3%; width:60%;}
+	    #add li input[type='submit']{margin:1% auto 1% 20%; border:none;}
+
+
+/*------------------------------------------------------------------------------------------*/
+/* 订单通用部分(购物车页, 提交订单页, 订单详情页的头部购物车商品信息包), 各种具体列表体现形式在各页面的类中定义 */
+/*------------------------------------------------------------------------------------------*/
+
+/* 包 */
+.cart_package{margin:8px auto 0; border:1px solid #ddd; background:#fff;}
+
+	/* 包头部 */
+	.cart_title{padding:4px 10px 2px 10px; color:#e60; border-bottom:solid 1px #e6e6e6; line-height:28px; background:#f3f3f3}
+		.cart_title b{float:left;}
+		.cart_title a{float:right; color:#999}
+	
+	/* 车内商品 */
+	.cart_package li{padding:7px 10px; border-bottom:1px solid #f3f3f3; height:auto; overflow:hidden; position:relative;}
+
+
+
+
+
+
+/* 促销简介(仅需一行的容器) */
+		.sales_title{border-bottom:dotted 1px #c3c3c3; color:#666; padding:8px 4%; overflow:hidden; background:#fff;}
+			.sales_title i{padding-right:5px;}
+			.sales_title b{color:#d30; padding:0 3px;}
+			.sales_title a{float:right; color:#999}
+		
+		/* 优惠的商品(带有商品的容器) */
+		.sales_list{padding:5px 10px; overflow:hidden; background:#fff; border-bottom:dotted 1px #c3c3c3;}
+			.sales_list a{display:block; width:27%; float:left; border:none; padding:0; padding:5px 3%;  background:#fff;}
+			
+				/* 商品图片和名称 */
+				.sales_list img{border:1px solid #eee; padding:2px;}
+				.sales_list b{display:block; font-weight:normal; color:#999; font-size:0.7rem; text-align:center; padding-top:2px;}
+
+
+
+#pager{text-align:center; line-height:35px; background:#fff; margin-top:10px; border:solid 1px #eee; border-left:0; border-right:0;}
+	#pager a{padding:4px 6px; border:solid 1px #ddd; margin:0 3px;  border-radius:3px;}
+	#pager span{padding:4px 6px; border:solid 1px #ddd; color:#bbb; margin:0 3px;  border-radius:3px;}
+
+
+
+/*------------------------------------------------------------------------------------------*/
+/* 全站通用 */
+/*------------------------------------------------------------------------------------------*/
+
+*{margin:0; padding:0;}
+html{height:100%}
+body{height:100%; font:14px/1.4 arial; color:#4a4a4a; font-family:'微软雅黑', "Helvetica Neue","sans-serif" !important; background:#f1f1f1;}
+ul,li{list-style:none}
+img{border:none; display:block; width:100%;}
+a{text-decoration:none;color:#4a4a4a;outline:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+a,button,input,img{-webkit-touch-callout:none; outline:none;}
+span{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+button{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+i, em{font-style:normal; font-weight:normal; font-family:iconfont}
+h1, h2, h3, h4, h5, h6, b{font-weight:normal}
+div{overflow:hidden;}
+table{border:0; width:100%;}
+input{font-family:iconfont;}
+
+
+/* 购物车商品, 消息提示圆框 */
+em.dot_detail, em.dot_message{position:absolute; width:14px; padding:1px; height:14px; background:#e50112; border-radius:8px; line-height:16px; color:#fff; font-size:0.6rem; margin-top:9px;}
+
+em.dot_detail{top:-4px; right:0}													/* 非通用底部购物车圆框 */
+em.dot_message{top:-2px; background:#fff; color:#333; right:14%;}				/* 消息背景 */
+										/* 通用底部购物车圆框 */
+
+/*------------------------------------------------------------------------------------------*/
+/* 通用透明设置, 主要用于缺货商品图片, 以及失效的购物车商品图片 */
+/*------------------------------------------------------------------------------------------*/
+.touming{filter:alpha(opacity=30); -moz-opacity:0.3; -khtml-opacity:0.3; opacity:0.3;}
+
+/*------------------------------------------------------------------------------------------*/
+/* 图形字体 */
+/*------------------------------------------------------------------------------------------*/
+
+@font-face {font-family: "iconfont";
+    src: url('font/iconfont.eot'); /* IE9*/
+    src: url('font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('font/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont{font-family:"iconfont" !important; font-size:1.1rem; font-style:normal; -webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px; -moz-osx-font-smoothing: grayscale;}
+
+
+/*------------------------------------------------------------------------------------------*/
+/* 圆角 */
+/*------------------------------------------------------------------------------------------*/
+
+.圆角3{-moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px;}
+.圆角5{-moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;}
+
+
+/*------------------------------------------------------------------------------------------*/
+/* 提示 */
+/*------------------------------------------------------------------------------------------*/
+
+.tips{line-height:26px; width:60%; padding:15px; font:16px microsoft yahei; display:inline-block; position:fixed; left:50%; top:150px; 
+	 z-index:99999; color:#fff; border-radius:10px; text-align:center; 
+	 -webkit-box-shadow:0 0 25px #666; -moz-box-shadow:0 0 25px #666; box-shadow:0 0 25px #666;
+	 filter:alpha(opacity=0); -moz-opacity:0; -khtml-opacity:0; opacity:0;}
+.tips_ok{background-color:#27ae60}
+.tips_error{background-color:#f30}
+
+
+/*------------------------------------------------------------------------------------------*/
+/* 活动 banner 轮播图片 */
+/*------------------------------------------------------------------------------------------*/
+.swiper-container{width:100%;}
+	.swiper-slide{text-align:center; font-size: 18px;background: #fff;display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center; justify-content: center;-webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;}
+	.swiper-slide img{width:100%; display:block;}
