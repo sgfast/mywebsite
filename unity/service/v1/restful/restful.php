@@ -104,7 +104,7 @@ class Restful {
 		$action = get ( 'action' );
 		
 		// 组合action
-		$this->action = $this->method . '_' . action;
+		$this->action = $this->method . '_' . $action;
 	}
 	
 	/**
@@ -134,7 +134,7 @@ class Restful {
 		}
 		
 		// 如果执行无错，且方法为GET，则使用过滤器
-		if ($flag && $this->method === 'get') {
+		if ($flag && $this->method === 'get' && isset($this->filters)) {
 			
 			// 遍历过滤器
 			foreach ( $this->filters as $filter ) {
@@ -157,6 +157,8 @@ class Restful {
 				}
 			}
 		}
+		
+		echo json_encode($this->output);
 	}
 }
 

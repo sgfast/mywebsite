@@ -19,10 +19,8 @@ abstract class Authorize {
 			}
 		}
 	}
-	protected abstract function validates() {
-	}
-	protected abstract function callback() {
-	}
+	protected abstract function validates();
+	protected abstract function callback();
 }
 
 ?>
