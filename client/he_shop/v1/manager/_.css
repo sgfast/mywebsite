@@ -1,0 +1,103 @@
+@CHARSET "UTF-8";
+body{margin:0; padding:0; background-color:#e7e8eb; font-size:14px; font-family:"微软雅黑";}
+ul,li{list-style:none; margin:0; padding:0;}
+a{text-decoration:none;}
+
+/* 顶部 */
+#header{height:60px; background-color:#fff; padding:0 15px; border-top:4px solid #44b549; border-bottom:1px solid #d9dadc;}
+	a#logo{display: block; width: 248px; height: 60px; background:url(../skin/image/logo.jpg);}
+
+/* 主体部分 */	
+#main{margin:36px; background:#fff; height:auto; overflow:hidden; border:1px solid #d9dadc;}
+
+	/* 左侧 */
+	#left{float:left; width:209px; border-right:1px solid #e7e7eb; padding:5px 0;}
+		#left ul{border-top:1px solid #e7e7eb; padding:10px 0;}
+		#left ul:first-child{border:none;}
+		
+		#left ul li{padding: 0 0 0 58px; width: auto; height:34px; line-height:34px;}
+		#left ul li:hover{background:#F5F5F9;}
+		#left ul li:hover:first-child{background:none;}
+			#left li a{color:#222; display:block; width:100%; height:100%;}
+		
+		/* 设置每组第一个li的样式 */
+		#left ul li:first-child{padding:0 30px; color:#8d8d8d;}
+			
+			/* 导航背景 */
+			#left li i{width:18px; height:18px; margin-right: 10px; margin-top: -0.2em; background:url(../skin/image/setup.png); display:inline-block; vertical-align:middle;}
+	
+	
+	/* 右侧 */
+	#right{overflow:hidden; padding-bottom:20px;}
+		/* 商品列表 */
+		
+		/* 通用头部 */
+		#title{height:56px; line-height:56px; padding-left:30px; border-bottom: 1px solid #e7e7eb; margin-bottom:30px;}
+
+		/* 搜索 */
+		#select{padding:0 30px; margin-bottom:10px; line-height:30px;}
+			select {padding:3px 5px; height:32px; line-height:32px; border: 1px solid #e6e7ec;}
+			#select input[type='text'] {width: 180px; height:30px; line-height:30px; border: 1px solid #e6e7ec; margin: 0 5px 0 0; padding:0 4px;}
+			input[type='submit'] {background: #006dcc; border:1px solid #005199; margin-right:5px; padding:7px 10px 8px; color: #fff; cursor: pointer;}
+			
+			/* 导出Excel */
+			#excel{float:right; padding-right:10px; color:#006dcc; cursor:pointer;}
+		
+		/* 内容显示部分 */
+		#content{padding:0 30px;}
+			.list{width:100%; background: #fff; border-top: 1px solid #e7e7eb; border-left:1px solid #e7e7eb;}
+			table{border-collapse: collapse; border-spacing: 0;}
+				.list th {color: #666; height: 33px; line-height: 33px; padding: 0 10px; background: #f4f5f9; border-bottom: 1px solid #ddd; border-right: 1px solid #ddd; font-weight: normal;}
+				.list td {padding: 8px 10px; line-height: 20px; border-right:1px solid #e7e7eb; border-bottom: 1px solid #ddd; text-align: center;}
+					.list td .img {height: 27px;}
+					.list input[type='text'] {width: 130px; border: 1px solid #e6e7ec; height: 20px; line-height: 20px; padding: 0 5px;}
+					.list td .small {width: 50px;}
+				    .list a{margin: 0 5px; color: #333; text-decoration: none; font-size:12px;}
+			
+			/* 分页 */
+			#page{text-align:right; margin-top:20px;}
+			
+				/* 上下页 */
+				.prev, .next{border-color:#e6e7ec; color: #222;  width: auto; padding-left: 14px; padding-right: 14px; position: relative; font-size: 0; border-width: 1px; border-style: solid; cursor: pointer;}
+					.arrow{position: absolute; top: 50%; left: 50%; margin-top: -6px; margin-left: -3px; border-width: 6px; border-style: dashed; border-color: transparent; }
+					.prev .arrow{border-left-width: 0; border-right-color: #919191; border-right-style: solid;}
+					.next .arrow{border-right-width: 0; border-left-color: #919191; border-left-style: solid;}
+
+				/* 跳转 */
+				#page input[type='text']{vertical-align: middle; width:75px; height:22px; line-height:22px; padding:4px 0; border:1px solid #e7e7eb; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; text-align: center; font-size: 14px; margin:0 4px;}
+			
+					.go{border-color: #e6e7ec; color: #222;   width: auto; padding-left: 20px; padding-right: 20px;}
+		    		.go:hover{background:#e6e7ec;}
+    			
+    			/* 页数显示 */
+    			.num{display: inline-block; vertical-align: middle; font-size: 14px; letter-spacing: normal;}
+			
+			
+		/* 添加商品 */
+		#single{width: 100%;}
+			#single tr{margin:8px 0; display:block; vertical-align: top;}
+			#single th{width: 120px; text-align:right; color: #666; font-weight:normal; }
+			#single th, #single td{padding:5px 15px; line-height: 24px; font-weight: normal;}
+			#single em{color: #ccc; font-style:normal; font-size:14px; height:30px; line-height:30px; display:block;}
+		
+			#single input[type='text'],#single input[type='password']{height:25px; line-height:25px; width:367px;}
+		
+			/* 提交保存 */
+			input[type='button'] {background:#44b549; border: 1px solid #44b549; margin-right: 5px; padding:8px 15px; color: #fff; cursor: pointer;  border-radius:3px;}
+			
+			
+			
+			
+			
+			
+			
+/* 底部 */
+
+
+
+
+/* 通用 */
+.btn{display:inline-block; overflow: visible; padding: 0 22px; height: 30px; line-height: 30px; vertical-align: middle; text-align: center; text-decoration: none; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; font-size: 14px; border-width: 1px; border-style: solid; cursor: pointer;}
+
+
+input[type='text'], input[type='password'], textarea {border:1px solid #e7e7eb; margin:0 5px 0 0; padding:4px 8px;}
