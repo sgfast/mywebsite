@@ -1,1 +1,60 @@
-<h1>product.category</h1>
+<div id='title'>商品类别列表</div>
+<div id='select'>
+	<select id="大类号"><option value="">选择大类</option><option value="1">顶级一</option><option value="2">顶级二</option><option value="3">顶级三</option></select>&nbsp;&nbsp;
+	<input id="filter" type="button" value="过滤">
+</div>
+<div id='content'>
+	<table id="list" class="list">
+		<tbody>
+			<tr>
+				<th style="width:5%;">编号</th><th>小图</th><th>名称</th><th>排序</th><th style="width:15%;">操作</th>
+			</tr>
+			<tr class="item" id="item_14" key="14">
+				<td>14</td>
+				<td><img src="../../upload/product/20160220/1455959040915.jpg" class="img"></td>
+				<td><input type="text" value="士大夫" id="名称_14" vlength="2,30" vmessage="名称为2-30位！"></td>
+				<td><input type="text" value="0" id="销量_14" vtype="整数" vlength="0,10000" vmessage="销量必须为正整数,且范围为0-10000！" class="small"></td>
+				<td><a href="javascript:void(0);" class="更新" key="14">更新</a><a ui-sref='product/update' class="编辑" key="14">编辑</a><a href="javascript:void(0);" class="删除" key="14">删除</a></td>
+			</tr>
+			<tr class="item" id="item_14" key="14">
+				<td>14</td>
+				<td><img src="../../upload/product/20160220/1455959040915.jpg" class="img"></td>
+				<td><input type="text" value="士大夫" id="名称_14" vlength="2,30" vmessage="名称为2-30位！"></td>
+				<td><input type="text" value="0" id="销量_14" vtype="整数" vlength="0,10000" vmessage="销量必须为正整数,且范围为0-10000！" class="small"></td>
+				<td><a href="javascript:void(0);" class="更新" key="14">更新</a><a ui-sref='product/update' class="编辑" key="14">编辑</a><a href="javascript:void(0);" class="删除" key="14">删除</a></td>
+			</tr>
+			
+		</tbody>
+	</table>
+</div>
+
+<div id='title'>添加类别</div>
+<table id="single" class="single">
+	<tbody>
+		<tr>
+			<th>父类别</th>
+			<td><select id="大类号"><option value="">选择大类别</option><option value="1">顶级一</option><option value="2">顶级二</option><option value="3">顶级三</option></select></td>
+		</tr>
+		
+
+		<tr>
+			<th>名称</th>
+			<td><input id="名称" type="text" vlength="2,30" vmessage="商品名称必须为2-30位！"><em>2-30位</em></td>
+		</tr>
+		<tr>
+			<th>图片</th>
+			<td><input id="名称" type="text" vlength="2,30" vmessage="商品名称必须为2-30位！"><em>2-30位</em></td>
+		</tr>
+		<tr>
+			<th>代金券颜色</th>
+			<td><input id="限购数" type="text" value="#FFFFFF" vtype="整数" vlength="0,200" vmessage="请输入正确的颜色代码！"><em>正确的颜色代码</em></td>
+		</tr>
+		<tr>
+			<th>排序</th><td><input id="排序" type="text" value="0" vtype="整数" vlength="0,200" vmessage="排序必须为正整数,且范围为0-200！"><em>正整数,范围为0-200</em></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td><input id="add" type="button" key="0" value="提交保存"></td>
+		</tr>
+	</tbody>
+</table>

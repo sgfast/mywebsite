@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" ng-app='myApp'>
+<html ng-app='myApp'>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,10 +10,51 @@
 	<script type="text/javascript" src='http://cdn.bootcss.com/angular-ui-router/0.2.18/angular-ui-router.js'></script>
 </head>
 <body>
-<a ui-sref='product/category'>product/category</a>
-<a ui-sref='product/list'>product/list</a>
-<div ui-view></div>
-<script type="text/javascript" src='app/router.js'></script>
-<script type="text/javascript" src='app/bootstrap.js'></script>  
+
+<div id='header'>
+	<a id='logo'></a>
+	<a></a>
+</div>
+
+<div id='main'>
+	<div id='left'>
+		<ul>
+			<li><i></i>商品管理</li>
+			<li><a ui-sref='product/list'>商品列表</a></li>
+			<li><a ui-sref='product/category'>类别管理</a></li>
+			<li><a ui-sref='product/add'>添加商品</a></li>
+		</ul>
+		<ul>
+			<li><i></i>用户管理</li>
+			<li><a ui-sref='user/list'>用户管理</a></li>
+			<li><a ui-sref='user/detail'>详情</a></li>
+		</ul>
+		<ul>
+			<li><i></i>订单管理</li>
+			<li ui-sref='order/list'>未付款</li>
+			<li ui-sref='order/list'>已付款</li>
+			<li ui-sref='order/list'>已发货</li>
+			<li ui-sref='order/list'>已完成</li>
+			<li ui-sref='order/list'>已取消</li>
+			<li ui-sref='order/list'>部分退货</li>
+			<li ui-sref='order/list'>整单退货</li>
+			<li><a ui-sref='order/list'>订单搜索</a></li>
+		</ul>
+		<ul>
+			<li><i></i>系统管理</li>
+			<li>管理员列表</li>
+			<li><a ui-sref='addadmin'>添加管理员</a></li>
+		</ul>
+	</div>
+	
+	<div id='right' ui-view>
+		<script type="text/javascript" src='app/router.js'></script>
+		<script type="text/javascript" src='app/bootstrap.js'></script>
+	</div>
+</div>
+<div id='footer'>
+
+</div>
+
 </body>
 </html>

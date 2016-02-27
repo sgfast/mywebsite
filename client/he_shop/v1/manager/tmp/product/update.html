@@ -1,1 +1,71 @@
-<h1>update</h1>
+<div id='title'>编辑商品</div>
+<div id='content'>
+	<table id="single" class="single">
+		<tbody>
+			<tr>
+				<th>商品大类</th>
+				<td><select id="大类号"><option value="">选择大类别</option><option value="1">顶级一</option><option value="2">顶级二</option><option value="3">顶级三</option></select></td>
+			</tr>
+			<tr>
+				<th>商品小类</th>
+				<td><select id="小类号"><option value="">选择小类别</option></select></td>
+			</tr>
+			<tr>
+				<th>商品名称</th>
+				<td><input id="名称" type="text" value='商品名秤' vlength="2,30" vmessage="商品名称必须为2-30位！"><em>2-30位</em></td>
+			</tr>
+			<tr>
+				<th>商品特色</th>
+				<td><input id="特色" type="text" value='商品特色' vlength="2,30" vmessage="商品特色必须为2-30位！"><em>2-30位</em></td>
+			</tr>
+			<tr>
+				<th>商品耗损率</th>
+				<td><input id="耗损" type="text" value="0.00" vtype="浮点数" vnumber="0,5" vmessage="耗损率必须是浮点数！"><em>浮点数,范围为0-5！</em></td>
+			</tr>
+			<tr>
+				<th>是否推荐</th>
+				<td><input id="是推荐" type="checkbox"> 是推荐</td>
+			</tr>
+			<tr>
+				<th>是否促销</th>
+				<td><input id="是促销" type="checkbox"> 是促销</td>
+			</tr>
+			<tr>
+				<th>是否隐藏</th>
+				<td><input id="是隐藏" type="checkbox"> 是隐藏</td>
+			</tr>
+			<tr>
+				<th>是否新品</th>
+				<td><input id="是新品" type="checkbox"> 是新品</td>
+			</tr>
+			<tr>
+				<th>是否限购</th><td><input id="是限购" type="checkbox"> 是限购</td>
+			</tr>
+			<tr>
+				<th>限购数量</th>
+				<td><input id="限购数" type="text" value="0" vtype="整数" vlength="0,200" vmessage="限购数必须为正整数,且范围为0-200！"><em>正整数,范围为0-200</em></td>
+			</tr>
+			<tr>
+				<th>限购开始时间</th>
+				<td><input id="限购开始时间" type="text" class="datetime" placeholder="选择时间" vlength="1,20" vmessage="请选择限购开始时间"><em>请选择开始时间</em></td>
+			</tr>
+			<tr>
+				<th>限购结束时间</th><td><input id="限购结束时间" type="text" class="datetime" placeholder="选择时间" vlength="1,20" vmessage="请选择限购结束时间"><em>请选择结束时间</em></td>
+			</tr>
+			<tr>
+				<th>首页排序</th><td><input id="首页排序" type="text" value="0" vtype="整数" vlength="0,200" vmessage="首页排序必须为正整数,且范围为0-200！"><em>正整数,范围为0-200</em></td>
+			</tr>
+			<tr>
+				<th>类别排序</th><td><input id="类别排序" type="text" value="0" vtype="整数" vlength="0,200" vmessage="类别排序必须为正整数,且范围为0-200！"><em>正整数,范围为0-200</em></td>
+			</tr>
+			<tr>
+				<th>详细说明</th>
+				<td><textarea rows="10" cols="50">商品详细说明</textarea></td>
+			</tr>
+			<tr>
+				<th></th>
+				<td><input id="add" type="button" key="0" value="提交保存"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

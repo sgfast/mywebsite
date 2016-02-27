@@ -1,1 +1,68 @@
-<h1>user.detail</h1>
+<div id='title'>用户编辑</div>
+<div id='content'>
+	<table id="single" class="single">
+		<tbody>
+			<tr>
+				<th>用户名</th>
+				<td><input id="名称" type="text" value='商品名秤' vlength="2,30" vmessage="商品名称必须为2-30位！"><em>2-30位</em></td>
+			</tr>
+			<tr>
+				<th>分销员号</th>
+				<td><input id="特色" type="text" value='商品特色' vlength="2,30" vmessage="商品特色必须为2-30位！"><em>2-30位</em></td>
+			</tr>
+			<tr>
+				<th>微信号</th>
+				<td><input id="耗损" type="text" value="0.00" vtype="浮点数" vnumber="0,5" vmessage="耗损率必须是浮点数！"><em>浮点数,范围为0-5！</em></td>
+			</tr>
+			<tr>
+				<th>默认收货地址</th>
+				<td><input id="限购数" type="text" value="0" vtype="整数" vlength="0,200" vmessage="限购数必须为正整数,且范围为0-200！"><em>正整数,范围为0-200</em></td>
+			</tr>
+			<tr>
+				<th>分销时间</th>
+				<td><input id="限购开始时间" type="text" class="datetime" placeholder="选择时间" vlength="1,20" vmessage="请选择限购开始时间"><em>请选择开始时间</em></td>
+			</tr>
+			<tr>
+				<th>电话</th><td><input id="限购结束时间" type="text" class="datetime" placeholder="选择时间" vlength="1,20" vmessage="请选择限购结束时间"><em>请选择结束时间</em></td>
+			</tr>
+			<tr>
+				<th>邮箱</th><td><input id="首页排序" type="text" value="0" vtype="整数" vlength="0,200" vmessage="首页排序必须为正整数,且范围为0-200！"><em>正整数,范围为0-200</em></td>
+			</tr>
+			<tr>
+				<th>余额</th><td><input id="类别排序" type="text" value="0" vtype="整数" vlength="0,200" vmessage="类别排序必须为正整数,且范围为0-200！"><em>正整数,范围为0-200</em></td>
+			</tr>
+			<tr>
+				<th>积分</th>
+				<td>100</td>
+			</tr>
+			<tr>
+				<th>首次来访</th>
+				<td>2016-02-27 12:23</td>
+			</tr>
+			<tr>
+				<th>最后来访</th>
+				<td>2016-02-27 12:42</td>
+			</tr>
+			<tr>
+				<th>来访次数</th>
+				<td>100</td>
+			</tr>
+			<tr>
+				<th>购买次数</th>
+				<td>100</td>
+			</tr>
+			<tr>
+				<th>购买条数</th>
+				<td>100</td>
+			</tr>
+			<tr>
+				<th>购买额数</th>
+				<td>100</td>
+			</tr>
+			<tr>
+				<th></th>
+				<td><input id="add" type="button" key="0" value="提交保存"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
