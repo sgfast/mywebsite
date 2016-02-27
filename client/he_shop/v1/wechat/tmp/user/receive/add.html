@@ -1,0 +1,15 @@
+<div id='box'>
+	<div id='cur'><i>&#xe61b;</i>添加收货地址<a ui-sref='user/receive/index'>返回地址列表</a></div>
+	<div id='takeForm'>
+		<table>
+			<tr><th>收货姓名：</th><td><input type="text" name="name" vType='中文' vLength='2,10' vMessage='收货人姓名必须是2-10位中文汉字！ ' placeholder="收货人" /></td></tr>
+			<tr><th>联系电话：</th><td><input type="text" name="tel" id="tel" vType='手机' vMessage='请填写正确的手机号码！' placeholder="联系手机" /></td></tr>
+			<tr><th>详细地址：</th><td><input type="text" name="address" id="address" vLength='6,30' vMessage='详细地址必须是6-30位字符！' placeholder="请填写到街道具体门牌号" /></td></tr>
+		</table>
+	</div>
+	<div id='button'>
+		<a class='doTakeUse' action='add' default='false'>添加并使用此地址</a>
+		<a class='doTake' action='add' default='false'>确定添加</a><a class='doTake' action='add' default='true'>添加并设为默认</a>
+	</div>
+
+</div>

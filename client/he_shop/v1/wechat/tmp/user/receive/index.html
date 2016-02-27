@@ -1,0 +1,36 @@
+<div id='box'>
+	<div id='cur'><i>&#xe61b;</i>收货地址<a ui-sref='user/index'>返回用户中心</a></div>
+	<div id='address'>
+		<ul>
+			<li class='on'>
+				<i>&#xe621;</i>
+				<div>
+					<p>
+					收货人 ：13013013130<br>
+					详细地址
+					</p>
+					<span>
+						<a ui-sref='user/receive/update' class='edit' key=''>编辑</a>
+					</span>
+				</div>
+			</li>
+			<li>
+				<i>&#xe621;</i>
+				<div>
+					<p>
+					收货人 ：13013013130<br>
+					详细地址
+					</p>
+					<span>
+						<a class='default' key=''>设为默认</a>
+						<a ui-sref='user/receive/update' class='edit' key=''>编辑</a>
+						<a class='delete' key='' href='javascript:void(0)'>删除</a>
+					</span>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div id='button'>
+		<a ui-sref='user/receive/add' id='add_take'>添加收货地址</a>
+	</div>
+</div>

@@ -96,13 +96,13 @@ var router = [
 	},
 	
 	// 订单部分
-	{
+	/*{
 		path: 'user/order/index',
 		data: {
 			url: '/user/order/index',
 	    	templateUrl: 'tmp/user/order/index.html'
 		}
-	},
+	},*/
 	{
 		path: 'user/order/detail',
 		data: {

@@ -1,0 +1,60 @@
+<div id='box'>
+	<div id='order'>
+		<div id='cur'><i>&#xe629;</i>我的订单<a ui-sref='user/index'>返回用户中心</a></div>
+		<div id='status'>
+			<ul>
+				<li><a href='order.php?status=0' class='on'><i>&#xe604;</i>待付款</a></li>
+				<li><a href='order.php?status=1' class=''><i>&#xe63c;</i>待发货</a></li>
+				<li><a href='order.php?status=2' class=''><i>&#xe63e;</i>已发货</a></li>
+				<li><a href='order.php?status=3' class=''><i class='big'>&#xe647;</i>已完成</a></li>
+				<li><a href='order.php?status=4' class=''><i class='big'>&#xe648;</i>已取消</a></li>
+				<li><a href='order.php?status=5' class=''><i class='big'>&#xe649;</i>已退货</a></li>
+			</ul>
+		</div>
+		<div id='list'>
+			<ul>
+				<li>
+					<div class='header'>
+						<div class='orderid'>订单号：YNBW1456300698</div>
+						<div class='price'>￥20</div>
+					</div>
+					<div class='mark'>
+						<div class='img'><img src='skin/image/cs.jpg' /></div>
+						<div class='detail'>
+							<i>商品名称</i>
+							<p>收货人：收货人</p>
+							<p>订购：订购时间</p>
+						</div>
+					</div>
+					<div class='operate'>
+						<a class='pay' key='' href='javascript:void(0)'>支付</a>
+						<a class='cancel' key='' href='javascript:void(0)'>取消</a>
+						<a class='complete' key='' href='javascript:void(0)'>完成</a>
+						<a ui-sref='user/order/detail'>详情</a>
+					</div>
+				</li>
+				<li>
+					<div class='header'>
+						<div class='orderid'>订单号：YNBW1456300698</div>
+						<div class='price'>￥20</div>
+					</div>
+					<div class='mark'>
+						<div class='img'><img src='skin/image/cs.jpg' /></div>
+						<div class='detail'>
+							<i>商品名称</i>
+							<p>收货人：收货人</p>
+							<p>订购：订购时间</p>
+						</div>
+					</div>
+					<div class='operate'>
+						<a class='pay' key='' href='javascript:void(0)'>支付</a>
+						<a class='cancel' key='' href='javascript:void(0)'>取消</a>
+						<a class='complete' key='' href='javascript:void(0)'>完成</a>
+						<a ui-sref='user/order/detail'>详情</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</div>

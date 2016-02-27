@@ -131,7 +131,8 @@ footer{width:100%; height:55px; line-height:55px; background:#f9f9f9; border-top
 		.cart_title a{float:right; color:#999}
 	
 	/* 车内商品 */
-	.cart_package li{padding:7px 10px; border-bottom:1px solid #f3f3f3; height:auto; overflow:hidden; position:relative;}
+	.cart{margin: 8px auto 0; border: 1px solid #ddd; background: #fff;}
+	.cart li{padding:7px 10px; border-bottom:1px solid #f3f3f3; height:auto; overflow:hidden; position:relative;}
 
 
 

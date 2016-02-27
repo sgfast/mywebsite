@@ -31,9 +31,9 @@
 .box{margin-top:10px; border-top:solid 1px #e3e3e3; border-bottom:solid 1px #e3e3e3; background:#fff;}
 
 	/* 盒子标题 */
-	.title{padding:2px 3% 0 3%; line-height:38px; border-bottom:solid 1px #eee; background:#fff;}
-		.title i{float:left; font-family:iconfont; padding-right:5px; font-size:1.3rem; color:#e60}
-		.title a{float:right; color:#797979;}
+	.tit{padding:2px 3% 0 3%; line-height:38px; border-bottom:solid 1px #eee; background:#fff;}
+		.tit i{float:left; font-family:iconfont; padding-right:5px; font-size:1.3rem; color:#e60}
+		.tit a{float:right; color:#797979;}
 
 	/* 商品分类 */
 	.cate{}
@@ -98,21 +98,21 @@
 
 /* 商品列表 */
 
-#list{background:#fdfdfd; padding:10px 2%;}
+#product{background:#fdfdfd; padding:10px 2%;}
 
-	#list ul{width:100%; margin:0 auto;}
-	#list li{width:46%; float:left; background:#fff; box-sizing:border-box; border:1px solid #ededed; margin:0 2% 10px; overflow:hidden;}
+	#product ul{width:100%; margin:0 auto;}
+	#product li{width:46%; float:left; background:#fff; box-sizing:border-box; border:1px solid #ededed; margin:0 2% 10px; overflow:hidden;}
 
 	/* 商品名称 */
-	#list em{display:block; height:2em; padding:5px; font-size:0.8rem; font-style:normal; color:#777777; margin-bottom:4px;}
+	#product em{display:block; height:2em; padding:5px; font-size:0.8rem; font-style:normal; color:#777777; margin-bottom:4px;}
 			
 	/* 商品价格 */
-	#list b{display:block; text-align:right; font-size:1rem; padding:3px 5px 5px 0; color:#ee656e;}
+	#product b{display:block; text-align:right; font-size:1rem; padding:3px 5px 5px 0; color:#ee656e;}
 
 
 
 	/* 尾部div */
-	#list #tail{display:blick; margin-top:6px; line-height:35px; text-align:center; color:#999}
+	#product #tail{display:blick; margin-top:6px; line-height:35px; text-align:center; color:#999}
 
 
 
@@ -227,8 +227,8 @@
 #result{}
 
 	/* 订单提交成功提示banner */
-	#status{font-family:iconfont; padding:15px 0; background:#b04346; text-align:center; color:#fff; font-size:2.5rem;}
-		#status i{display:block; font-size:1.1rem;}
+	#result #status{font-family:iconfont; padding:15px 0; background:#b04346; text-align:center; color:#fff; font-size:2.5rem;}
+		#result #status i{display:block; font-size:1.1rem;}
 	
 	/* 订单详细内容 */
 	#content{margin-top:10px; border-top:1px solid #ddd; border-bottom:1px solid #ddd; padding:20px 10%; background:#fff;}
@@ -301,7 +301,7 @@
 		/* 基本信息 */
 	    #coupon .mark{width:68%; height:80px; border-right:2px dotted #fff; color:#fff; padding:2% 0 3% 3%; float:left; background:#36c525;  -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px;}
 	    #coupon .mark p{margin:1% 0;}
-	    #coupon .mark h3{font-size:1.6rem;}
+	    #coupon .mark h3{font-size:1.6rem; background:none; border:none; padding:0; color:#fff;}
 	    
 	    /* 代金券限制 */
 	    #coupon .limit{width:23%; height:80px; padding:2% 2% 3% 2%;; border-left:2px dotted #c9c9c9; background:#f6f6f6; float:left; text-align:center; color:#999;  -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px;}
@@ -371,7 +371,7 @@
     	/* 订单条目头部 */
         #order .header{border-bottom:1px solid #e9e9e9; height:35px; line-height:35px; width:94%; margin:auto; font-weight:bold; font-size:0.8rem; margin-bottom:10px;}
 	        #order .header .orderid{float:left;}
-	        #order .header .price{float:right; color:#900}
+	        #order .header .price{float:right; color:#900; font-size:0.8rem; margin:0; padding:0;}
 
 		/* 订单简介 */
 		#order .mark{width:94%; margin:auto; margin-top:10px; padding-bottom:10px; border-bottom:1px solid #e9e9e9;}
