@@ -72,7 +72,7 @@ input[type='button'] {display:inline-block; overflow: visible; padding: 0 22px; 
 	/* 列表 */
 	.list{width:100%; background: #fff; border-top: 1px solid #e7e7eb; border-left:1px solid #e7e7eb;}
 	table{border-collapse: collapse; border-spacing: 0;}
-		.list th {color: #666; height: 33px; line-height: 33px; padding: 0 10px; background: #f4f5f9; border-bottom: 1px solid #ddd; border-right: 1px solid #ddd; font-weight: normal;}
+		.list th {color: #666; height:40px; line-height:40px; padding: 0 10px; background: #f4f9f7; border-bottom: 1px solid #ddd; border-right: 1px solid #ddd; font-weight: normal;}
 		.list td {padding: 8px 10px; line-height: 20px; border-right:1px solid #e7e7eb; border-bottom: 1px solid #ddd; text-align: center;}
 			.list td .img {height: 27px;}
 			.list input[type='text'] {width: 30px;}
