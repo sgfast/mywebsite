@@ -1,1 +1,6 @@
 <h1>首页</h1>
+<form name='form' ng-submit='submit(form)' novalidate='novalidate'>
+	<input type='text' class='form' name="userName" ng-model="user.name" required ng-minlength='3' ng-maxlength='10' ng-trim='true'></input>
+	<span ng-class='{red: form.userName.$dirty && form.userName.$invalid}'>必填，最小3位，最大10位。</span>
+	<button type='submit' ng-disabled='form.$invalid'>提交</button>
+</form>

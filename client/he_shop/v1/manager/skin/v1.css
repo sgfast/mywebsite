@@ -5,6 +5,7 @@ body{margin:0; padding:0; background-color:#e7e8eb; font-size:14px; font-family:
 ul,li{list-style:none; margin:0; padding:0;}
 a{text-decoration:none;}
 
+.alert{color:red}
 
 /* 控件定义 */
 
@@ -103,7 +104,8 @@ input[type='button'] {display:inline-block; overflow: visible; padding: 0 22px; 
 		#single tr{margin:8px 0; display:block; vertical-align: top;}
 		#single th{width: 120px; text-align:right; color: #666; font-weight:normal; }
 		#single th, #single td{padding:5px 15px; line-height: 24px; font-weight: normal;}
-		#single em{color: #ccc; font-style:normal; font-size:14px; height:30px; line-height:30px; display:block;}
+		#single td{color:#ccc; font-size:14px; height:30px; line-height:30px; }
+		#single em{display:block;  font-style:normal;}
 	
 		#single input[type='text'],#single input[type='password']{width:367px;}
 

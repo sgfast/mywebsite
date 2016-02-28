@@ -1,10 +1,20 @@
+<bk-form name='添加商品' data='product.single'></bk-form>
+<fk></fk>
 <div id='title'>添加商品</div>
 <div id='content'>
+<script>
+genForm('添加商品', product.single);
+genForm('更新商品', product.single);
+</script>
+<form name='form' ng-submit='submit(form)' novalidate='novalidate'>
 	<table id="single" class="single">
 		<tbody>
 			<tr>
 				<th>商品大类</th>
-				<td><select id="大类号"><option value="">选择大类别</option><option value="1">顶级一</option><option value="2">顶级二</option><option value="3">顶级三</option></select></td>
+				<td>
+					<select name='bigCategory' ng-model='model.bigCategory' required><option value=''>选择大类别</option><option value="1">顶级一</option><option value="2">顶级二</option><option value="3">顶级三</option></select>
+					<em ng-class='{alert: form.bigCategory.$dirty && form.bigCategory.$invalid}'>必须选择</em>
+				</td>
 			</tr>
 			<tr>
 				<th>商品小类</th>
@@ -12,7 +22,10 @@
 			</tr>
 			<tr>
 				<th>商品名称</th>
-				<td><input id="名称" type="text" vlength="2,30" vmessage="商品名称必须为2-30位！"><em>2-30位</em></td>
+				<td>
+					<input type='text' name="name" ng-model="model.name" required ng-minlength='5' ng-maxlength='30' ng-trim='true'></input>
+					<em ng-class='{alert: form.name.$dirty && form.name.$invalid}'>必填，5-30位</em>
+				</td>
 			</tr>
 			<tr>
 				<th>商品特色</th><td><input id="特色" type="text" vlength="2,30" vmessage="商品特色必须为2-30位！"><em>2-30位</em></td>
@@ -63,8 +76,9 @@
 			</tr>
 			<tr>
 				<th></th>
-				<td><input id="add" type="button" key="0" value="提交保存"></td>
+				<td><button id="add" type="submit" key="0" ng-disabled='form.$invalid'>保存提交</button></td>
 			</tr>
 		</tbody>
 	</table>
+</form>
 </div>

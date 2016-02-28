@@ -10,7 +10,12 @@ var router = [
 		path: 'tmp/index',
 		data: {
 			url: '/index',
-		    templateUrl: 'tmp/index.html'
+		    templateUrl: 'tmp/index.html',
+		    controller: function($scope){
+				$scope.submit = function(form){
+					alert(1);
+				}
+			}
 		}
 	},
 	
@@ -38,7 +43,12 @@ var router = [
 		path: 'product/add',
 		data: {
 			url: '/product/add',
-			templateUrl: 'tmp/product/add.html'
+			templateUrl: 'tmp/product/add.html',
+			controller: function($scope){
+				$scope.submit = function(form){
+					alert(1);
+				}
+			}
 		}
 	},
 	{
