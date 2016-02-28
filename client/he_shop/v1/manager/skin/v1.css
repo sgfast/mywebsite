@@ -1,7 +1,7 @@
 @CHARSET "UTF-8";
 
 /* 通用 */
-body{margin:0; padding:0; background-color:#e7e8eb; font-size:14px; font-family:"微软雅黑";}
+body{margin:0; padding:0; background-color:#e7e8eb; font-size:14px; font-family:"Microsoft YaHei";}
 ul,li{list-style:none; margin:0; padding:0;}
 a{text-decoration:none;}
 
@@ -57,7 +57,8 @@ input[type='button'] {display:inline-block; overflow: visible; padding: 0 22px; 
 /* 列表 */
 
 /* 头部 */
-#title{height:56px; line-height:56px; padding-left:30px; border-bottom: 1px solid #e7e7eb; margin-bottom:30px;}
+#title{height:56px; line-height:56px; padding:0 30px; border-bottom: 1px solid #e7e7eb; margin-bottom:30px;}
+	#title a{float:right; background:url(image/help.jpg) right center no-repeat; padding-right:25px;}
 
 /* 搜索 */
 #select{padding:0 30px; margin-bottom:10px; line-height:30px;}
@@ -84,15 +85,15 @@ input[type='button'] {display:inline-block; overflow: visible; padding: 0 22px; 
 	
 		/* 上下页 */
 		.prev, .next{border-color:#e6e7ec; color: #222;  width: auto; padding-left: 14px; padding-right: 14px; position: relative; font-size: 0; border-width: 1px; border-style: solid; cursor: pointer;}
+		
 			.arrow{position: absolute; top: 50%; left: 50%; margin-top: -6px; margin-left: -3px; border-width: 6px; border-style: dashed; border-color: transparent; }
 			.prev .arrow{border-left-width: 0; border-right-color: #919191; border-right-style: solid;}
 			.next .arrow{border-right-width: 0; border-left-color: #919191; border-left-style: solid;}
 
 		/* 跳转 */
 		#page input[type='text']{vertical-align: middle; width:75px; height:22px; line-height:22px; padding:4px 0; border:1px solid #e7e7eb; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; text-align: center; font-size: 14px; margin:0 4px;}
-	
-			.go{border-color: #e6e7ec; color: #222;   width: auto; padding-left: 20px; padding-right: 20px;}
-    		.go:hover{background:#e6e7ec;}
+		#page input[type='button']{font-family:'Microsoft YaHei'; background-color:#fff; border-color:#e6e7ec; color:#222; width:auto; padding:0 20px; line-height:normal;}
+    		#page input[type='button']:hover{background:#e6e7ec; border-color:#dadbe0;}
   			
   			/* 页数显示 */
   			.num{display: inline-block; vertical-align: middle; font-size: 14px; letter-spacing: normal;}

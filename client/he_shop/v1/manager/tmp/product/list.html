@@ -1,4 +1,4 @@
-<div id='title'>商品列表</div>
+<div id='title'>商品列表<a ui-sref=''>使用说明</a></div>
 <div id='select'>
 	<select id="大类号"><option value="">选择大类</option><option value="1">顶级一</option><option value="2">顶级二</option><option value="3">顶级三</option></select>&nbsp;&nbsp;
 	<select id="小类号"><option value="">选择小类</option></select>&nbsp;&nbsp;<input id="名称" type="text" placeholder="商品名称"><input id="filter" type="button" value="过滤">
@@ -55,15 +55,16 @@
 	</table>
 	
 	<div id='page'>
+		<input type='button' class="btn prev">
         <a href="javascript:void(0);" class="btn prev"><i class="arrow"></i></a>
 		<span class="num">
 		    <label>1</label>
 		    <span class="num_gap">/</span>
 		    <label>9</label>
 		</span>
-        <a href="javascript:void(0);" class="btn next "><i class="arrow"></i></a>            
+        <input type='button' class="btn next">
         <input type="text">
-        <a href="javascript:void(0);" class="btn go">跳转</a>
+        <input type='button' value='跳转' class="btn go">
 	</div>
 </div>
 
