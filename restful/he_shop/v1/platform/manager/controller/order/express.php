@@ -8,11 +8,13 @@ class MyController extends Controller{
 	public function get_all(){
 		
 		// 取query
-		$query = new MongoDB\Driver\Query([], ['limit'=>get('page')*get('skip'), 'skip'=>get('skip')]);
+		$query = $this->createQuery([], ['limit'=>get('page')*get('skip'), 'skip'=>get('skip')]);
 		
 		// 取值
 		$result = &Mongo::query(DB::$main, COL::$Sp_Express, $query);
-		return $result;
+		
+		// 返回
+		return $this->Data($result);
 	}
 	
 	/**
@@ -21,11 +23,13 @@ class MyController extends Controller{
 	public function get_id(){
 		
 		// 取query
-		$query = query_from_id(get('id'));
+		$query = $this->createQueryId($this->createId(get('id')));
 		
 		// 取值
 		$result = &Mongo::query(DB::$main, COL::$Sp_Express, $query);
-		return $result;
+		
+		// 返回
+		return $this->Data($result);
 	}
 	
 	/**
@@ -38,20 +42,19 @@ class MyController extends Controller{
 		$obj = json_decode(Sp_Express_Main);
 	
 		// 为obj赋值
-		$obj->_id = create_id();
+		$obj->_id = $this->createId();
 		$obj->aid = 0;
 		$obj->name = '王铁柱';
 		$obj->mobile = '13013013130';
 	
 		// 注册bulk
-		$bulk = new MongoDB\Driver\BulkWrite();
-		$bulk->insert($obj);
+		$bulk = $this->createInsert($obj);
 	
 		// 插入
 		Mongo::write(DB::$main, COL::$Sp_Express, $bulk);
-	
+
 		// 返回
-		return '{"return": "OK"}';
+		return $this->Ok();
 	}
 	
 	/**
@@ -60,14 +63,13 @@ class MyController extends Controller{
 	public function put_id(){
 	
 		// 注册bulk
-		$bulk = new MongoDB\Driver\BulkWrite();
-		$bulk->update(['name'=>'NIKE'], ['$set'=>['sort'=>5]], ['multi' => false, 'upsert' => true]);
+		$bulk = $this->createUpdate(['name'=>'NIKE'], ['$set'=>['sort'=>5]], ['multi' => false, 'upsert' => true]);
 	
 		// 插入
 		Mongo::write(DB::$main, COL::$Sp_Express, $bulk);
 	
 		// 返回
-		return '{"return": "OK"}';
+		return $this->Ok();
 	}
 
 	/**
@@ -76,14 +78,13 @@ class MyController extends Controller{
 	public function delete_id(){
 	
 		// 注册bulk
-		$bulk = new MongoDB\Driver\BulkWrite();
-		$bulk->delete(['_id'=>create_id(get('id'))]);
+		$bulk = $this->createDelete(['_id'=>create_id(get('id'))]);
 	
 		// 插入
 		Mongo::write(DB::$main, COL::$Sp_Express, $bulk);
 	
 		// 返回
-		return '{"return": "OK"}';
+		return $this->Ok();
 	}
 }
 

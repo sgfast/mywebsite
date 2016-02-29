@@ -133,6 +133,12 @@ class Restful {
 			$flag = false;
 		}
 		
+		// 如果this-output出错，则不应该往下执行
+		if ($this->output->return !== 'OK'){
+			echo json_encode($this->output);
+			exit;
+		}
+		
 		// 如果执行无错，且方法为GET，则使用过滤器
 		if ($flag && $this->method === 'get' && isset($this->filters)) {
 			
@@ -158,6 +164,7 @@ class Restful {
 			}
 		}
 		
+		// 最终输出
 		echo json_encode($this->output);
 	}
 }

@@ -122,29 +122,5 @@ function YmdHi(int $time = 0) {
 	return date ( 'Y-m-d H:i', $t );
 }
 
-/**
- * 快速生成一个_id
- */
-function create_id($_id = '') {
-	if ($_id != '')
-		return new MongoDB\BSON\ObjectID($_id);
-	else
-		return new MongoDB\BSON\ObjectID();
-}
-
-/**
- * 快速查询所有数据
- */
-function query_all() {
-	return new MongoDB\Driver\Query([]);
-}
-
-/**
- * 快速根据_id查询一条数据
- * @$strId 传入的id
- */
-function query_from_id($strId) {
-	return new MongoDB\Driver\Query(['_id'=>new MongoDB\BSON\ObjectID($strId)]);
-}
 
 ?>
