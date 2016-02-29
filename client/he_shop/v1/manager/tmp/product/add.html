@@ -1,6 +1,6 @@
 <bk-form name='添加商品' data='product.single'></bk-form>
 <fk></fk>
-<div id='title'>添加商品</div>
+<div id='title'>添加商品<a ui-sref=''>使用说明</a></div>
 <div id='content'>
 <script>
 genForm('添加商品', product.single);
@@ -76,7 +76,7 @@ genForm('更新商品', product.single);
 			</tr>
 			<tr>
 				<th></th>
-				<td><button id="add" type="submit" key="0" ng-disabled='form.$invalid'>保存提交</button></td>
+				<td><input id="add" type="button" key="0" ng-disabled='form.$invalid' value="提交保存"></td>
 			</tr>
 		</tbody>
 	</table>
