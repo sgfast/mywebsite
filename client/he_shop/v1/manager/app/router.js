@@ -2,7 +2,7 @@
  * router名称空间
  */
 var router = [	
-	
+              
 	/**
 	 * 首页
 	 */
@@ -11,10 +11,10 @@ var router = [
 		data: {
 			url: '/index',
 		    templateUrl: 'tmp/index.html',
-		    controller: function($scope){
-				$scope.submit = function(form){
-					alert(1);
-				}
+		    controller: function($scope, $http, ajax){
+		    	ajax.get('json/test.json', function(data){
+		    		$scope.model = data;
+		    	});
 			}
 		}
 	},
