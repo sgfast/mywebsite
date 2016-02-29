@@ -3,13 +3,28 @@
 class MyController extends Controller{
 
 	/**
-	 * 获取全部
+	 * 获取全部大类
 	 */
-	public function get_all(){
+	public function get_bid(){
 		
 		// 取query
-		$query = query_all();
+		//$query = query_all();
+		$query = new MongoDB\Driver\Query(['fid'=>'']);
 		
+		// 取值
+		$result = &Mongo::query(DB::$main, COL::$Pt_Category, $query);
+		return $result;
+	}
+	
+	/**
+	 * 获取某一大类下的全部小类
+	 */
+	public function get_sid(){
+	
+		// 取query
+		//$query = query_all();
+		$query = new MongoDB\Driver\Query(['fid'=>get('fid')]);
+	
 		// 取值
 		$result = &Mongo::query(DB::$main, COL::$Pt_Category, $query);
 		return $result;

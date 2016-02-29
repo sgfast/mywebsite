@@ -68,14 +68,6 @@ class MyController extends Controller{
 		$obj->pay->coupon = 0;
 		$obj->pay->online = 0;
 		$obj->pay->payable = 0;
-		
-		$obj->cancle->user = '';
-		$obj->cancle->service = '';
-		
-		$obj->returned->all = false;
-		$obj->returned->price = 0;
-		$obj->returned->mark = '';
-		$obj->returned->product = [];
 	
 		// 注册bulk
 		$bulk = new MongoDB\Driver\BulkWrite();
@@ -104,21 +96,6 @@ class MyController extends Controller{
 		return '{"return": "OK"}';
 	}
 
-	/**
-	 * 删除
-	 */
-	public function delete_id(){
-	
-		// 注册bulk
-		$bulk = new MongoDB\Driver\BulkWrite();
-		$bulk->delete(['_id'=>create_id(get('id'))]);
-	
-		// 插入
-		Mongo::write(DB::$main, COL::$Sp_Order, $bulk);
-	
-		// 返回
-		return '{"return": "OK"}';
-	}
 }
 
 ?>

@@ -58,22 +58,6 @@ class MyController extends Controller{
 	}
 	
 	/**
-	 * 编辑
-	 */
-	public function put_id(){
-	
-		// 注册bulk
-		$bulk = new MongoDB\Driver\BulkWrite();
-		$bulk->update(['_id'=>create_id(get('id'))], ['$set'=>['content'=>'new content']], ['multi' => true, 'upsert' => false]);
-	
-		// 插入
-		Mongo::write(DB::$main, COL::$Pt_Comment, $bulk);
-	
-		// 返回
-		return '{"return": "OK"}';
-	}
-	
-	/**
 	 * 删除
 	 */
 	public function delete_id(){
