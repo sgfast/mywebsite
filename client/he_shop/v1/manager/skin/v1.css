@@ -10,7 +10,7 @@ a{text-decoration:none;}
 /* 控件定义 */
 
 input{ height: 28px; line-height:28px;}
-input[type='button']{border:solid 1px #44b549; background:#44b549; color:#fff;height: 29px; line-height: 29px;border-radius: 2px;  -moz-border-radius: 2px; -webkit-border-radius: 2px; }
+input[type='button']{border:solid 1px #44b549; background-color:#44b549; color:#fff; height:30px; border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px; }
 input[type='checkbox']{height:14px; line-height:14px}
 
 select {padding:0 5px; height:30px; line-height:30px; border: 1px solid #e6e7ec;}
@@ -19,8 +19,7 @@ select {padding:0 5px; height:30px; line-height:30px; border: 1px solid #e6e7ec;
 input[type='text'], input[type='password'], textarea {border:1px solid #e7e7eb; margin:0 5px 0 0; padding:0 8px;}
 
 /* 按钮 */
-input[type='button'] {display:inline-block; overflow: visible; padding: 0 22px; vertical-align: middle; text-align: center; text-decoration: none;  font-size: 14px; border-width: 1px; border-style: solid; cursor: pointer;}
-
+input[type='button'] {display:inline-block; overflow: visible; padding: 0 22px; vertical-align: middle; text-align: center; text-decoration: none;  font-size: 14px; border-width: 1px; border-style: solid; cursor: pointer; font-family:"Microsoft YaHei";} 
 /*  */
 .btn{display:inline-block; overflow: visible; padding: 0 22px; vertical-align: middle; text-align: center; text-decoration: none; font-size: 14px; border-width: 1px; border-style: solid; cursor: pointer;}
 
@@ -35,7 +34,7 @@ input[type='button'] {display:inline-block; overflow: visible; padding: 0 22px; 
 
 
 /* 左侧 */
-#left{float:left; width:209px; border-right:1px solid #e7e7eb; padding:5px 0;}
+#left{display:table-cell; width:250px; border-right:1px solid #e7e7eb; padding:5px 0;}
 	#left ul{border-top:1px solid #e7e7eb; padding:10px 0;}
 	#left ul:first-child{border:none;}
 	
@@ -52,7 +51,7 @@ input[type='button'] {display:inline-block; overflow: visible; padding: 0 22px; 
 	
 
 /* 右侧 */
-#right{overflow:hidden; padding-bottom:20px;}
+#right{display:table-cell; width:2000px; padding-bottom:20px;}
 	
 
 /* 列表 */
@@ -64,6 +63,7 @@ input[type='button'] {display:inline-block; overflow: visible; padding: 0 22px; 
 /* 搜索 */
 #select{padding:0 30px; margin-bottom:10px; line-height:30px;}
 	#select input[type='text'] {width:100px;}
+	#select input[type='button']:hover{background:#2f9833;}
 	
 	/* 导出Excel */
 	#excel{float:right; padding-right:10px; color:#006dcc; cursor:pointer;}
@@ -85,19 +85,19 @@ input[type='button'] {display:inline-block; overflow: visible; padding: 0 22px; 
 	#page{text-align:right; margin-top:20px;}
 	
 		/* 上下页 */
-		.prev, .next{border-color:#e6e7ec; color: #222;  width: auto; padding-left: 14px; padding-right: 14px; position: relative; font-size: 0; border-width: 1px; border-style: solid; cursor: pointer;}
-		
+		.prev{background:url(image/pre.png) center no-repeat;}
+		.next{background:url(image/next.png) center no-repeat;}
 			.arrow{position: absolute; top: 50%; left: 50%; margin-top: -6px; margin-left: -3px; border-width: 6px; border-style: dashed; border-color: transparent; }
 			.prev .arrow{border-left-width: 0; border-right-color: #919191; border-right-style: solid;}
 			.next .arrow{border-right-width: 0; border-left-color: #919191; border-left-style: solid;}
 
 		/* 跳转 */
-		#page input[type='text']{vertical-align: middle; width:75px; height:22px; line-height:22px; padding:4px 0; border:1px solid #e7e7eb; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; text-align: center; font-size: 14px; margin:0 4px;}
+		#page input[type='text']{vertical-align: middle; width:75px; height:20px; padding:4px 0; border:1px solid #e7e7eb; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; text-align: center; font-size: 14px; margin:0 4px;}
 		#page input[type='button']{font-family:'Microsoft YaHei'; background-color:#fff; border-color:#e6e7ec; color:#222; width:auto; padding:0 20px; line-height:normal;}
-    		#page input[type='button']:hover{background:#e6e7ec; border-color:#dadbe0;}
+    		#page input[type='button']:hover{background-color:#e6e7ec; border-color:#dadbe0;}
   			
   			/* 页数显示 */
-  			.num{display: inline-block; vertical-align: middle; font-size: 14px; letter-spacing: normal;}
+  			.num{display:inline-block; vertical-align:middle; font-size:14px; letter-spacing:normal; margin:0 5px;}
    			
 
 	/* 详情 */
@@ -109,5 +109,6 @@ input[type='button'] {display:inline-block; overflow: visible; padding: 0 22px; 
 		#single em{display:block;  font-style:normal;}
 	
 		#single input[type='text'],#single input[type='password']{width:367px;}
+		#single input[type='button']:hover{background:#2f9833;}
 
 

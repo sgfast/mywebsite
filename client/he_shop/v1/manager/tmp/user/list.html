@@ -1,4 +1,4 @@
-<div id='title'>用户列表</div>
+<div id='title'>用户列表<a ui-sref=''>使用说明</a></div>
 <div id='select'>
 	<input id="用户号" type="text" placeholder="用户号"><input id="用户名" type="text" placeholder="用户名"><input id="电话" type="text" placeholder="电话"><input id="filter" type="button" value="过滤">
 	<a id='excel'>导出Excle</a>
@@ -49,15 +49,15 @@
 	</table>
 	
 	<div id='page'>
-        <a href="javascript:void(0);" class="btn prev"><i class="arrow"></i></a>
+		<input type='button' class="btn prev">
 		<span class="num">
 		    <label>1</label>
 		    <span class="num_gap">/</span>
 		    <label>9</label>
 		</span>
-        <a href="javascript:void(0);" class="btn next "><i class="arrow"></i></a>            
+        <input type='button' class="btn next">
         <input type="text">
-        <a href="javascript:void(0);" class="btn go">跳转</a>
+        <input type='button' value='跳转' class="btn go">
 	</div>
 </div>
 
