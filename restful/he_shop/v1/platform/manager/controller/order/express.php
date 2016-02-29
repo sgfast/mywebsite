@@ -61,7 +61,7 @@ class MyController extends Controller{
 	
 		// 注册bulk
 		$bulk = new MongoDB\Driver\BulkWrite();
-		$bulk->update(['name'=>'NIKE'], ['$set'=>['sort'=>5]], ['multi' => true, 'upsert' => false]);
+		$bulk->update(['name'=>'NIKE'], ['$set'=>['sort'=>5]], ['multi' => false, 'upsert' => true]);
 	
 		// 插入
 		Mongo::write(DB::$main, COL::$Sp_Express, $bulk);

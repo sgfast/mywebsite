@@ -5,13 +5,13 @@ class MyController extends Controller{
 	/**
 	 * 获取全部
 	 */
-	public function get_all(){
+	public function get_uid(){
 		
 		// 取query
-		$query = new MongoDB\Driver\Query([], ['limit'=>get('page')*get('skip'), 'skip'=>get('skip')]);
+		$query = new MongoDB\Driver\Query(['uid'=>get('uid')], ['limit'=>get('page')*get('skip'), 'skip'=>get('skip')]);
 		
 		// 取值
-		$result = &Mongo::query(DB::$main, COL::$Er_User, $query);
+		$result = &Mongo::query(DB::$main, COL::$Er_Coupon, $query);
 		return $result;
 	}
 	
@@ -24,7 +24,7 @@ class MyController extends Controller{
 		$query = query_from_id(get('id'));
 		
 		// 取值
-		$result = &Mongo::query(DB::$main, COL::$Er_User, $query);
+		$result = &Mongo::query(DB::$main, COL::$Er_Coupon, $query);
 		return $result;
 	}
 	
@@ -34,27 +34,26 @@ class MyController extends Controller{
 	public function post_add(){
 		
 		// 取object
-		$this->injection(MOD::$Er_User);
-		$obj = json_decode(Er_User_Main);
+		$this->injection(MOD::$Er_Coupon);
+		$obj = json_decode(Er_Coupon_Main);
 		
 		// 为obj赋值
 		$obj->_id = create_id();
-		$obj->aid = 0;
-		$obj->openid = '';
-		$obj->nickname = '';
-		$obj->mobile = '';
-		$obj->email = '';
-		$obj->thumb = '';
-		$obj->point = 0;
-		$obj->cash = 0;
-		$obj->register = time();
+		$obj->cid = '';
+		$obj->bid = '';
+		$obj->uid = '';
+		$obj->value = 1;
+		$obj->limit->value = 10;
+		$obj->limit->time = 0;
+		$obj->time->get = 0;
+		$obj->time->use = 0;
 		
 		// 注册bulk
 		$bulk = new MongoDB\Driver\BulkWrite();
 		$bulk->insert($obj);
 		
 		// 插入
-		Mongo::write(DB::$main, COL::$Er_User, $bulk);
+		Mongo::write(DB::$main, COL::$Er_Coupon, $bulk);
 		
 		// 返回
 		return '{"return": "OK"}';
@@ -67,10 +66,10 @@ class MyController extends Controller{
 	
 		// 注册bulk
 		$bulk = new MongoDB\Driver\BulkWrite();
-		$bulk->update(['_id'=>create_id(get('id'))], ['$set'=>['feedback.$.content'=>get('content')]], ['multi' => true, 'upsert' => false]);
+		$bulk->update(['_id'=>create_id(get('id'))], ['$set'=>['time.use'=>time()]], ['multi' => false, 'upsert' => false]);
 	
 		// 插入
-		Mongo::write(DB::$main, COL::$Er_User, $bulk);
+		Mongo::write(DB::$main, COL::$Er_Coupon, $bulk);
 	
 		// 返回
 		return '{"return": "OK"}';

@@ -16,6 +16,7 @@ class COL{
     public static $Er_User =        'shop.er.user';
     public static $Er_Message =     'shop.er.message';
     public static $Er_Coupon =      'shop.er.coupon';
+    public static $Er_Receive =     'shop.er.receive';
     
     /**
      * 订单部分 */
@@ -41,6 +42,7 @@ class MOD{
     public static $Er_User =        'user/user.php';
     public static $Er_Message =     'user/message.php';
     public static $Er_Coupon =      'user/coupon.php';
+    public static $Er_Receive =     'user/receive.php';
     
     /**
      * 订单部分 */

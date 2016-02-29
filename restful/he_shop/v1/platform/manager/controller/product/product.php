@@ -8,7 +8,7 @@ class MyController extends Controller{
 	public function get_all(){
 		
 		// 取query
-		$query = new MongoDB\Driver\Query([], ['limit'=>get('page')*get('skip'), 'skip'=>get('skip')]);
+		$query = new MongoDB\Driver\Query([], ['limit'=>get('limit'), 'skip'=>get('limit')*get('skip')]);
 		
 		// 取值
 		$result = &Mongo::query(DB::$main, COL::$Pt_Product, $query);
