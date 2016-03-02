@@ -5,6 +5,17 @@ body{margin:0; padding:0; background-color:#e7e8eb; font-size:14px; font-family:
 ul,li{list-style:none; margin:0; padding:0;}
 a{text-decoration:none;}
 
+/*------------------------------------------------------------------------------------------*/
+/* 提示 */
+/*------------------------------------------------------------------------------------------*/
+
+.tips{line-height:26px; width:60%; padding:15px; font:16px microsoft yahei; display:inline-block; position:fixed; left:50%; top:150px; 
+	 z-index:99999; color:#fff; border-radius:10px; text-align:center; 
+	 -webkit-box-shadow:0 0 25px #666; -moz-box-shadow:0 0 25px #666; box-shadow:0 0 25px #666;
+	 filter:alpha(opacity=0); -moz-opacity:0; -khtml-opacity:0; opacity:0;}
+.tips_ok{background-color:#27ae60}
+.tips_error{background-color:#f30}
+
 .alert{color:red}
 
 /* 控件定义 */
