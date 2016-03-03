@@ -3,8 +3,11 @@
 //***************************************************************************************************************
 /**
  * 全局get方法
- * @param name get参数名
- * @param def 默认值
+ * 
+ * @param name
+ *            get参数名
+ * @param def
+ *            默认值
  * @returns get参数值
  */
 function get(name, def)
@@ -50,9 +53,9 @@ var reg = {
 	msn: 	 	/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
 };
 
-//***************************************************************************************************************
-//bootstrap部分
-//***************************************************************************************************************
+// ***************************************************************************************************************
+// bootstrap部分
+// ***************************************************************************************************************
 /**
  * 基础消息服务
  */
@@ -114,7 +117,7 @@ return {
 	// ajax通用框架
 	action: function(type, url, params, callback){
 
-		// 如果type === get 或  delete，则首先组装url
+		// 如果type === get 或 delete，则首先组装url
 		if (type === 'get' || type === 'delete'){
 			url = this.packUrl(url, params);
 		}
@@ -193,19 +196,17 @@ return {
 var factoryLinkage = function(ajax){
 return {
 	
-	// 属性
-	objs = null;
+	/**
+	 * 全局属性
+	 */
+	url: '',
+	objs: null,
 	parentValue: 0,
 	
 	/**
-	 * 创建linkage应用（添加、编辑均可）
-	 * url: 'http://示例/master/controller/action'
-	 * objs: [{
-	 * 		id: 'element_id',
-	 * 		value: 0, 	// 添加时为0，编辑时为从数据库中取出的值
-	 * 		type: 'bid'	// 与后台接口相对应，由此值确定为哪级数据
-	 * 	}]
-	 * 
+	 * 创建linkage应用（添加、编辑均可） url: 'http://示例/master/controller/action' objs: [{
+	 * id: 'element_id', value: 0, // 添加时为0，编辑时为从数据库中取出的值 type: 'bid' //
+	 * 与后台接口相对应，由此值确定为哪级数据 }]
 	 */
 	linkage: function(url, objs){
 		
@@ -214,7 +215,8 @@ return {
 			objs[i].obj = doucment.getElementById(objs[i].id);
 		}
 		
-		// 将objs赋值到全局对象
+		// 将objs和url赋值到全局对象
+		this.url = url;
 		this.objs = objs;
 		
 		// 遍历所有select，绑定数据
@@ -229,42 +231,89 @@ return {
 			}
 			
 			// 确定fullUrl
-			var params = 'type=' + objs[i].type + '&value=' + objs[i].value;
-			if (i > 0){
-				params += '&parent=' + parentValue;
-			}
-			var fullUrl = url + '?' + params;
+			var fullUrl = this.packUrl(i);
 			
-			// 绑定新的parentValue
+			// 绑定parentValue为当前select的值
+			// 注意：此值一定是在取fullUrl之后计算
 			this.parentValue = objs[i].value;
-			
-			// 取回数据
+
+			// 取回数据，组装options
 			ajax.get(fullUrl, null, function(data){
-				
-				// 添加数据到select元素中，注意，options[0]已被占用，要从1开始
-				for (var j=1; j<=data.length; j++){
-					objs[i].obj.options[j] = new Option(data[j-1].text, data[j-1].value);
-					
-					// 检查selectedId 是否等于 data[i-1].value，如果是应该选中的项，则让其选中
-					if (objs[i].value === data[j-1].value){
-						objs[i].obj.options[j].selected = true;
-					}
-				}
+				this.setOptions(i, data);				
 			});
 		}
 		
 		// 添加事件
 		for (var i=0; i<objs.length; i++){
 			
+			// 如果是最后一个select则跳出（最后一个select是没有事件的）
+			if (i === objs.length - 1){
+				break;
+			}
+			
+			// 注册change事件，绑定parentValue，并调用change事件处理器
+			// 注意：此parentValue必须在事件方法调用之值先取到
+			$('#' + objs[i].id).change(function(){
+				this.parentValue = $(this).val();
+				this.changeEventHandler(i);
+			});
 		}
 	},
 	
-	// 事件处理器
-	changeEventHandler: function(){
+	/**
+	 * change事件处理器
+	 */
+	changeEventHandler: function(idx, value){
 		
+		// 清空从i以下的所有select的options
+		// 注意，index有个+1的过程，因为传递过来的index本身的select是不需要重新加载数据的
+		for (var i=idx + 1; i<objs.length; i++){
+			this.clearOptions(objs[i].obj);
+		}
+		
+		// 组装url
+		var fullUrl = this.packUrl(idx + 1);
+		
+		// 取回数据，组装options
+		ajax.get(fullUrl, null, function(data){
+			this.setOptions(idx, data);
+		});
 	},
 	
-	// 保留第一项默认option项,清空其它所有option选项
+	/**
+	 * 组装真正的ajax的url
+	 */
+	packUrl: function(i){
+		
+		// 确定fullUrl
+		var params = 'type=' + objs[i].type + '&value=' + objs[i].value;
+		if (i > 0){
+			params += '&parent=' + this.parentValue;
+		}
+		
+		// 返回组装好的fullUrl
+		return this.url + '?' + params;		
+	}
+	
+	/**
+	 * 获取数据并设置options和被选择的值
+	 */
+	setOptions: function(idx, data){
+		
+		// 添加数据到select元素中，注意，options[0]已被占用，要从1开始
+		for (var j=1; j<=data.length; j++){
+			objs[idx].obj.options[j] = new Option(data[j-1].text, data[j-1].value);
+			
+			// 检查selectedId 是否等于 data[idx-1].value，如果是应该选中的项，则让其选中
+			if (objs[idx].value === data[j-1].value){
+				objs[idx].obj.options[j].selected = true;
+			}
+		}
+	}
+	
+	/**
+	 * 保留第一项默认option项,清空其它所有option选项
+	 */
 	clearOptions: function(obj){
 		var len = obj.options.length;
 		for(var i=1; i<len; i++)
@@ -293,9 +342,9 @@ var factory = [
 	func: factoryLinkage
 }];
 
-//***************************************************************************************************************
+// ***************************************************************************************************************
 // bootstrap部分
-//***************************************************************************************************************
+// ***************************************************************************************************************
 
 /**
  * 初始化app

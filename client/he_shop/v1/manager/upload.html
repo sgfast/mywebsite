@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<style>
+	#imgs img{width:100px; }
+</style>
+</head>
+<body>
+<form>
+	<button type="button" id="open">Choose</button>
+	<input style='display:none;' type='file' name='file' accept='image/jpeg, image/gif, image/png' multiple="multiple" id='file' />
+	<div id='imgs'></div>
+</form>
+<script>
+
+/**
+ * 不显示上传条打开选择文件框
+ */
+var file = document.getElementById('file');
+
+// 检测文件框是否存在
+if (file === null || file === undefined){
+	alert('文件框不存在');
+}
+
+/**
+ * 隐藏上传控件，通过组件的点击打开文件选择框
+ */
+if (window.File && window.FileReader && window.FileList && window.Blob) {
+	$('#open').click(function(){
+		file.click();
+	});
+}
+
+/**
+ * 当某上传框选择之后触发
+ */
+$('#file').on('change',function(){
+	
+	// 检测文件格式与尺寸
+	if (!checkFiles()){
+		return false;
+	}
+	
+	// 添加预览
+	for (var i=0; i<file.files.length; i++){
+		reader = new FileReader();
+		reader.readAsDataURL(file.files[i]);
+		reader.onload = function(){
+	        $('#imgs').append($("<img src='" + this.result + "' onclick='upload(this.src)' >"));
+	        
+	    };
+	}
+	
+	// 打印属性
+	console.log(file.files.length + '个文件');
+	for (var i=0; i<file.files.length; i++){
+		var f = file.files[i];
+		console.log(f);
+	}
+});
+
+/**
+ * 文件上传
+ */
+function upload(img){
+	$.post("server.php", {img: img}, function(data){  
+		if(data.img != ''){  
+		    alert('文件上传成功!');  
+		}else{  
+		    alert('upload fail');  
+		}  
+	},'json');
+}
+
+
+/**
+ * 各种检测
+ */
+function checkFiles(){
+	
+	// 检测文件是否存在
+	if (file.files.length < 1){
+		alert('请选择至少一个文件');
+		return false;
+	}
+	
+	// 检测文件格式与尺寸
+	for (var i=0; i<file.files.length; i++){
+
+		// 格式
+		if(file.files[i].type.indexOf('image') === -1) {
+	        alert("必须选择图片文件！");
+	        return false;
+	    }
+		
+		// 尺寸
+		var size = Math.floor(file.files[i].size/1024);        
+	    if (size > 1000) {
+	        alert("上传文件不得超过200K!");
+	        return false;
+	    }
+	}
+	
+	// 如果都没有问题，则返回true
+	return true;
+}
+
+
+</script>
+</body>
+</html>
